@@ -1,25 +1,23 @@
 import React from 'react'
-import Main from '../components/Main';
-import Row from '../components/Row';
-import api from '../Api';
+import Navbar from '../components/Navbar'
+import Main from '../components/Main'
+import api from '../Api'
+import Row from '../components/Row'
 
-function Home() {
+const Home = () => {
   return (
     <>
-    <div>
+    <Navbar />
     <Main />
-    <div>
-    <Row ID='5'  title='Popular' fetchURL={api.apiPopular}/>
-    <Row ID='2' title='Top Rated' fetchURL={api.apiTopRated}/>
-    <Row ID='3' title='Trending' fetchURL={api.apiTrending}/>
-    <Row ID='4' title='Horror' fetchURL={api.apiHorror}/>
-    <Row ID='1' title='Upcoming' fetchURL={api.apiUpcoming}/>
-    </div>
-    </div>
+    <Row rowID='5' title='Upcoming' fetchUrl={api.apiUpcoming}  />
+    <Row rowID='1' title='Popular' fetchUrl={api.apiPopular} />
+    <Row rowID='2' title='TopRated' fetchUrl={api.apiTopRated} />
+    <Row rowID='3' title='Trending' fetchUrl={api.apiTrending}  />
+    <Row rowID='4' title='Horror' fetchUrl={api.apiHorror} />
+   
     </>
   )
 }
 
-export default Home;
-
+export default Home
 

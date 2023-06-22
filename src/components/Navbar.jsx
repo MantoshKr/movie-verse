@@ -1,12 +1,14 @@
 import React from 'react'
 
+
+
 function Navbar() {
   return (
-    <div className='flex item-center justify-between p-4 z-[100] w-full absolute'>
-    <h1 className='text-yellow-500 text-4xl font-bold cursor-pointer'>MovieVerse</h1>
+    <div className='fixed flex item-center justify-between p-1 z-[100] w-full'>
+    <h1 className='text-yellow-500 text-3xl font-bold cursor-pointer   '>MovieVerse</h1>
     <div className='flex'>
-        <button className='text-white p-2 font-bold  rounded '>LOGIN</button>
-        <button className='bg-indigo-600 text-white font-bold p-2 rounded cursor-pointer' >BUY PLAN</button>
+        <button className='text-white p-2 font-bold  rounded hover:bg-slate-600 '>LOGIN</button>
+        <button className='bg-indigo-600 text-white font-bold p-2 rounded cursor-pointer hover:bg-indigo-700' >SIGN UP</button>
     </div>
     </div>
   )

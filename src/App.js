@@ -6,6 +6,7 @@ import Signup from './Pages/Signup';
 import Login from './Pages/Login';
 import Account from './Pages/Account';
 import { AuthContextProvider } from './context/AuthContext';
+import Navbar from './components/Navbar';
 
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
     <>
     <BrowserRouter>
     <AuthContextProvider>
+    <Navbar />
     <Routes>
       <Route path="/" element={<Home />}/>
       <Route path="/Signup" element={<Signup />}/>

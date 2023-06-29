@@ -7,7 +7,7 @@ import Row from '../components/Row'
 const Home = () => {
   return (
     <>
-    <Navbar />
+    
     <Main />
     <Row rowID='5' title='Upcoming' fetchUrl={api.apiUpcoming}  />
     <Row rowID='1' title='Popular' fetchUrl={api.apiPopular} />

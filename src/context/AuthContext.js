@@ -11,18 +11,12 @@ from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 
 
-
-
-
-
-
 const AuthContext = createContext();
 
 export function AuthContextProvider ({ children }) {
     const [user, setUser] = useState({});
 
 
-  
 
     function signUp(email, password) {
         createUserWithEmailAndPassword(auth, email, password);

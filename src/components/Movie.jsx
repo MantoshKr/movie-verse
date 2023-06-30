@@ -45,7 +45,7 @@ const Movie = ({ item }) => {
         {item.title}
       </h1>
       <div onClick={saveShow} className='absolute  top-0 left-0 p-4'>
-       {like ? <FaHeart /> : <FaRegHeart /> }
+       {like ? (<FaHeart />) : (<FaRegHeart />) }
       </div>
       </div>
 

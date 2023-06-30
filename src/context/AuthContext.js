@@ -25,33 +25,32 @@ export function AuthContextProvider ({ children }) {
   
 
     function signUp(email, password) {
-     createUserWithEmailAndPassword(auth , email, password);
-     setDoc(doc(db, 'users', email), {
-    }
-    );
-    }
+        createUserWithEmailAndPassword(auth, email, password);
+        setDoc(doc(db, 'users', email), {
+            savedShows: []
+        })
+      }
     
     function logIn(email, password) {
         return signInWithEmailAndPassword(auth , email, password);
     }
 
     function logOut() {
-        return signOut();
-    }
+        return signOut(auth);
+      }
 
 
     
-    useEffect(() => {
+      useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-        if (user) {
-            setUser(currentUser);
-        } else {
-            setUser({});
-        }
+          setUser(currentUser);
         });
-    
-        return unsubscribe;
-    }, []);
+        return () => {
+          unsubscribe();
+        };
+      });
+
+   
     
     return (
         <AuthContext.Provider value={{ user , logIn , signUp ,logOut }}>{children}</AuthContext.Provider>

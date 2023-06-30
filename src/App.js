@@ -23,9 +23,9 @@ const App = () => {
       <Route
             path='/account'
             element={
-              <ProtectedRoute>
+             
                 <Account />
-              </ProtectedRoute>
+              
             }
           />
     </Routes>

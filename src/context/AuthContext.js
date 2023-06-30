@@ -22,9 +22,7 @@ export function AuthContextProvider ({ children }) {
     const [user, setUser] = useState({});
 
 
-    function logIn(email, password) {
-        return signInWithEmailAndPassword(auth , email, password);
-    }
+  
 
     function signUp(email, password) {
      createUserWithEmailAndPassword(auth , email, password);
@@ -33,6 +31,9 @@ export function AuthContextProvider ({ children }) {
     );
     }
     
+    function logIn(email, password) {
+        return signInWithEmailAndPassword(auth , email, password);
+    }
 
     function logOut() {
         return signOut();

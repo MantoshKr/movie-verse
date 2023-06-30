@@ -7,6 +7,7 @@ import Login from './Pages/Login';
 import Account from './Pages/Account';
 import { AuthContextProvider } from './context/AuthContext';
 import Navbar from './components/Navbar';
+import ProtectedRoute from './components/ProtectedRoute';
 
 
 const App = () => {
@@ -19,7 +20,14 @@ const App = () => {
       <Route path="/" element={<Home />}/>
       <Route path="/Signup" element={<Signup />}/>
       <Route path="/Login" element={<Login />}/>
-      <Route path="/Account" element={<Account />}/>
+      <Route
+            path='/account'
+            element={
+              <ProtectedRoute>
+                <Account />
+              </ProtectedRoute>
+            }
+          />
     </Routes>
     </AuthContextProvider>
     </BrowserRouter>

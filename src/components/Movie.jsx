@@ -8,9 +8,27 @@ import {doc , updateDoc , arrayUnion} from 'firebase/firestore';
 const Movie = ({ item }) => {
   const [like, setLike] = useState(false);
   const { user } = UserAuth();
+  const [saved, setSaved] = useState(false);
+
+  const movieID = doc(db, 'users', `${user?.email}`);
 
 
   
+  const saveShow = async () => {
+    if (user?.email) {
+      setLike(!like);
+      setSaved(true);
+      await updateDoc( movieID,{
+        savedShows: arrayUnion({
+          id: item.id,
+          title: item.title,
+          img: item.backdrop_path,
+        }),
+      });
+    } else {
+      alert('Please log in to save a movie');
+    }
+  };
   
   
 
@@ -26,7 +44,7 @@ const Movie = ({ item }) => {
       <h1 className='white-space-normal text-xs md:text-sm font-bold flex justify-center items-center h-full text-center'>
         {item.title}
       </h1>
-      <div className='absolute  top-0 left-0 p-4'>
+      <div onClick={saveShow} className='absolute  top-0 left-0 p-4'>
        {like ? <FaHeart /> : <FaRegHeart /> }
       </div>
       </div>

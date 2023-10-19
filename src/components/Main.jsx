@@ -33,7 +33,7 @@ const truncatestring = (str,n ) => {
     <img
       src={`https://image.tmdb.org/t/p/original/${movies[movie]?.backdrop_path}`}
       alt={movies.title}
-      className="w-full h-auto"
+      className="w-full h-[80vh] object-cover"
     />
     <div className="absolute inset-0 flex flex-col justify-end p-6">
       <h1 className="text-4xl font-bold text-white mb-4">{movies[movie]?.title}</h1>

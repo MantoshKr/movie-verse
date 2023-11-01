@@ -10,7 +10,6 @@ Movie-Verse is a web application that allows users to browse and like their favo
 - [Firebase Setup](#firebase-setup)
 - [Deployment](#deployment)
 
- 
 ## Features
 
 - User registration and authentication using Firebase.
@@ -100,4 +99,3 @@ The app is deployed on Vercel. To deploy your own instance of the app on Vercel,
    ```
 
 4. Follow the prompts to choose your project settings and deployment options.
-
